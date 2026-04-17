@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 296 32% 10%;
+    --foreground: 0 0% 100%;
+    --card: 296 22% 16%;
+    --card-foreground: 0 0% 100%;
+    --popover: 296 22% 12%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 320 100% 49%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 291 16% 22%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 292 14% 18%;
+    --muted-foreground: 0 0% 76%;
+    --accent: 292 16% 18%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 296 12% 24%;
+    --input: 296 12% 24%;
+    --ring: 320 100% 49%;
+    --brand: 320 100% 49%;
+    --brand-foreground: 0 0% 100%;
+    --highlight: 320 100% 64%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    font-family: var(--font-montserrat), "Montserrat", "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #2f1237 0%, #1b0d21 30%, #140915 100%);
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgba(255, 0, 153, 0.28);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .hero-shell {
+    box-shadow: 0 28px 70px rgba(13, 0, 18, 0.22);
+  }
+
+  .hero-header {
+    background:
+      radial-gradient(circle at 8% 14%, rgba(255, 255, 255, 0.1), transparent 24%),
+      linear-gradient(90deg, #7d4a94 0%, #5c336f 36%, #2b1834 72%, #170e1d 100%);
+  }
+
+  .hero-stage {
+    background:
+      radial-gradient(circle at 8% 14%, rgba(255, 255, 255, 0.12), transparent 24%),
+      radial-gradient(circle at 36% 84%, rgba(255, 255, 255, 0.08), transparent 20%),
+      radial-gradient(circle at 68% 62%, rgba(255, 0, 153, 0.18), transparent 16%),
+      linear-gradient(90deg, #9d5cb3 0%, #6d397d 36%, #2b1834 72%, #170e1d 100%);
+    isolation: isolate;
+  }
+
+  .hero-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(90% 26% at 20% 4%, rgba(255, 255, 255, 0.08) 0%, transparent 70%),
+      radial-gradient(120% 36% at 14% 26%, rgba(255, 255, 255, 0.08) 0%, transparent 72%),
+      radial-gradient(100% 30% at 88% 54%, rgba(0, 0, 0, 0.32) 0%, transparent 70%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.12) 100%);
+    pointer-events: none;
+  }
+
+  .hero-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(160deg, transparent 0%, transparent 52%, rgba(255, 255, 255, 0.04) 52%, transparent 64%),
+      radial-gradient(circle at 100% 46%, rgba(0, 0, 0, 0.28), transparent 24%);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .hero-person {
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 22px 38px rgba(0, 0, 0, 0.28));
+  }
+
+  .hero-nameplate {
+    background: rgba(19, 12, 21, 0.94);
+    border: 1px solid #bd0a85;
+    border-radius: 5px;
+    box-shadow: 0 20px 34px rgba(0, 0, 0, 0.24);
+  }
+
+  .hero-kicker {
+    font-family: var(--font-montserrat), "Montserrat", "Segoe UI", sans-serif;
+    color: rgba(255, 255, 255, 0.94);
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-title {
+    font-family: var(--font-compacta), "Compacta BT", "Arial Narrow", Impact, var(--font-montserrat), sans-serif;
+    color: #bd0a85;
+    font-weight: 900;
+    -webkit-text-stroke: 5px #ffffff;
+    text-shadow:
+      1px 0 0 #ffffff,
+      -1px 0 0 #ffffff,
+      0 1px 0 #ffffff,
+      0 -1px 0 #ffffff,
+      2px 2px 0 #ffffff,
+      -2px 2px 0 #ffffff,
+      2px -2px 0 #ffffff,
+      -2px -2px 0 #ffffff,
+      0 10px 26px rgba(255, 0, 153, 0.16);
+  }
+
+  .countdown-surface {
+    background: #ffffff;
+  }
+
+  .countdown-title {
+    color: #26152e;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+
+  .countdown-number {
+    font-family: var(--font-montserrat), "Montserrat", "Segoe UI", sans-serif;
+    color: #c40083;
+    font-weight: 300;
+  }
+
+  .countdown-separator {
+    color: #c40083;
+    font-weight: 300;
+    line-height: 0.82;
+  }
+
+  .reference-surface {
+    background: #ffffff;
+  }
+
+  .reference-card {
+    background: rgba(20, 8, 24, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 44px rgba(7, 0, 10, 0.16);
+    backdrop-filter: blur(10px);
+  }
+
+  .reference-cta {
+    background:
+      radial-gradient(circle at 82% 44%, rgba(255, 0, 153, 0.16), transparent 18%),
+      linear-gradient(120deg, rgba(43, 16, 50, 0.98) 0%, rgba(18, 10, 23, 0.98) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 54px rgba(7, 0, 10, 0.22);
+  }
+
+  .glow-button {
+    background: linear-gradient(180deg, #ff1ba8 0%, #cc007f 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+      0 0 22px rgba(255, 0, 153, 0.36),
+      0 14px 30px rgba(255, 0, 153, 0.22);
+  }
+
+  .glow-button:hover {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+      0 0 26px rgba(255, 0, 153, 0.42),
+      0 16px 34px rgba(255, 0, 153, 0.24);
+  }
+
+  .text-brand-glow {
+    color: #ff41bb;
+  }
+
+  .text-brand-soft {
+    color: #ff8fd7;
+  }
+}
