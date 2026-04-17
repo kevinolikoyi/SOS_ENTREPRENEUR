@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 296 32% 10%;
-    --foreground: 0 0% 100%;
-    --card: 296 22% 16%;
-    --card-foreground: 0 0% 100%;
-    --popover: 296 22% 12%;
-    --popover-foreground: 0 0% 100%;
+    --background: 0 0% 100%; /* Blanc */
+    --foreground: 0 0% 20%;
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
     --primary: 320 100% 49%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 291 16% 22%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 292 14% 18%;
-    --muted-foreground: 0 0% 76%;
-    --accent: 292 16% 18%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 97%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 20%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 296 12% 24%;
-    --input: 296 12% 24%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
     --ring: 320 100% 49%;
     --brand: 320 100% 49%;
     --brand-foreground: 0 0% 100%;
@@ -40,7 +40,7 @@
   body {
     @apply bg-background font-sans text-foreground antialiased;
     font-family: var(--font-montserrat), "Montserrat", "Segoe UI", sans-serif;
-    background: linear-gradient(180deg, #2f1237 0%, #1b0d21 30%, #140915 100%);
+    background: #ffffff; /* Totalement blanc */
     min-height: 100vh;
   }
 
@@ -193,5 +193,212 @@
 
   .text-brand-soft {
     color: #ff8fd7;
+  }
+
+  .eligibility-stage {
+    background:
+      radial-gradient(circle at 10% 14%, rgba(255, 255, 255, 0.12), transparent 22%),
+      radial-gradient(circle at 80% 24%, rgba(255, 0, 153, 0.22), transparent 24%),
+      radial-gradient(circle at 68% 72%, rgba(255, 255, 255, 0.06), transparent 24%),
+      linear-gradient(120deg, #9d5cb3 0%, #6d397d 36%, #2b1834 72%, #170e1d 100%);
+  }
+
+  .eligibility-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(80% 28% at 16% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 70%),
+      radial-gradient(90% 40% at 100% 100%, rgba(0, 0, 0, 0.26) 0%, transparent 76%);
+    pointer-events: none;
+  }
+
+  .eligibility-pill {
+    background: rgba(27, 24, 31, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 26px 54px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(18px);
+  }
+
+  .eligibility-pill-badge {
+    background: linear-gradient(180deg, #ff1ba8 0%, #cc007f 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+      0 12px 24px rgba(255, 0, 153, 0.24);
+  }
+
+  .process-stage {
+    background:
+      radial-gradient(circle at 12% 12%, rgba(255, 143, 215, 0.12), transparent 20%),
+      radial-gradient(circle at 88% 22%, rgba(189, 10, 133, 0.08), transparent 18%),
+      linear-gradient(180deg, #ffffff 0%, #fff8fd 100%);
+  }
+
+  .process-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(90% 30% at 20% 0%, rgba(255, 255, 255, 0.7) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .process-card {
+    background:
+      radial-gradient(circle at 100% 0%, rgba(255, 0, 153, 0.18), transparent 28%),
+      linear-gradient(160deg, rgba(35, 20, 42, 0.98) 0%, rgba(18, 10, 23, 0.97) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 22px 54px rgba(22, 10, 28, 0.22);
+  }
+
+  .process-card-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+      0 26px 60px rgba(22, 10, 28, 0.24);
+  }
+
+  .process-card-muted {
+    opacity: 0.94;
+    transform: translateY(0) scale(0.985);
+  }
+
+  .process-card-index {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  }
+
+  .process-path-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: 190px 86px 190px 86px 190px;
+    align-items: start;
+  }
+
+  .process-card-slot {
+    position: relative;
+    z-index: 2;
+  }
+
+  .process-card-slot-1 {
+    grid-column: 1 / 6;
+    grid-row: 1;
+  }
+
+  .process-card-slot-2 {
+    grid-column: 2 / 7;
+    grid-row: 3;
+  }
+
+  .process-card-slot-3 {
+    grid-column: 1 / 6;
+    grid-row: 5;
+  }
+
+  .process-route {
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-route-1 {
+    grid-column: 2 / 6;
+    grid-row: 2;
+    min-height: 86px;
+  }
+
+  .process-route-2 {
+    grid-column: 2 / 6;
+    grid-row: 4;
+    min-height: 86px;
+  }
+
+  .process-route-base {
+    stroke: rgba(36, 17, 44, 0.34);
+    stroke-width: 3.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 4 10;
+  }
+
+  .process-route-glow {
+    stroke: rgba(255, 20, 162, 0.9);
+    stroke-width: 3.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 4 10;
+    filter: drop-shadow(0 0 10px rgba(255, 20, 162, 0.26));
+    opacity: 0.96;
+  }
+
+  .tight-sections {
+    margin-top: 0;
+  }
+
+  .section-inner {
+    padding: 2.5rem 1rem;
+  }
+
+  .section-inner-padded {
+    padding: 2.75rem 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-inner {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .section-inner-padded {
+      padding: 3.75rem 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-inner {
+      padding: 4.5rem 2rem;
+    }
+
+    .section-inner-padded {
+      padding: 5rem 2rem;
+    }
+
+    .process-path-grid {
+      max-height: calc(100vh - 8rem);
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .process-path-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 92px auto 92px auto;
+      min-height: auto;
+    }
+
+    .process-card-slot-1,
+    .process-card-slot-2,
+    .process-card-slot-3,
+    .process-route-1,
+    .process-route-2 {
+      grid-column: 1;
+    }
+
+    .process-card-slot-1 {
+      grid-row: 1;
+    }
+
+    .process-route-1 {
+      grid-row: 2;
+    }
+
+    .process-card-slot-2 {
+      grid-row: 3;
+    }
+
+    .process-route-2 {
+      grid-row: 4;
+    }
+
+    .process-card-slot-3 {
+      grid-row: 5;
+    }
   }
 }

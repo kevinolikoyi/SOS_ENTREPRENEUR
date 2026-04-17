@@ -25,15 +25,14 @@ const helpItems = [
 
 export default function SupportSection() {
   return (
-    <section className="reference-surface">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+    <section className="reference-surface tight-sections">
+      <div className="mx-auto max-w-6xl px-4 section-inner-padded">
         <SectionHeading
-          badge="SOS Entrepreneur"
-          title="On ne te laisse"
+            title="On ne te laisse"
           accent="pas tomber."
         />
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        <div className="mt-20 grid gap-5 lg:grid-cols-3">
           {helpItems.map((item) => {
             const Icon = item.icon;
 
@@ -46,7 +45,6 @@ export default function SupportSection() {
                   <div className="flex size-14 items-center justify-center rounded-2xl border border-[#24112c]/10 bg-white text-brand-glow shadow-[0_10px_24px_rgba(36,17,44,0.12)]">
                     <Icon className="size-7" />
                   </div>
-                  <div className="h-1.5 w-16 rounded-full bg-[#24112c]/70" />
                 </div>
                 <h3 className="mt-6 text-2xl font-black tracking-tight text-[#24112c]">
                   {item.title}

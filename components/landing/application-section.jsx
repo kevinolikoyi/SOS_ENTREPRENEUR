@@ -1,14 +1,14 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
 export default function ApplicationSection() {
   return (
-    <section className="reference-surface">
-      <div className="mx-auto max-w-6xl px-4 pb-16 pt-0 sm:px-6 sm:pb-20">
+    <section className="reference-surface tight-sections">
+      <div className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 sm:pb-16 section-inner">
         <div
           id="postuler"
-          className="reference-cta mt-16 rounded-[2rem] px-6 py-8 sm:px-8 sm:py-10"
+          className="reference-cta mt-8 rounded-[2rem] px-6 py-8 sm:px-8 sm:py-10"
         >
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
@@ -19,9 +19,9 @@ export default function ApplicationSection() {
                 Candidater ici
                 <span className="block text-brand-soft">maintenant.</span>
               </h2>
-              <p className="mt-4 text-base leading-8 text-white/78">
+              <p className="mt-4 text-base leading-8 text-white">
                 Chaque edition retient un nombre limite de profils. Si ton activite peut
-                rebondir avec le bon accompagnement, c&apos;est le moment de te signaler.
+                rebondir avec le bon accompagnement, c'est le moment de te signaler.
               </p>
             </div>
 
@@ -31,9 +31,8 @@ export default function ApplicationSection() {
                 size="lg"
                 className="glow-button min-w-[240px] border-0 px-7 text-base text-white"
               >
-                <a href="https://wa.me/2290167088303" target="_blank" rel="noreferrer">
-                  <MessageCircle />
-                  Postuler via WhatsApp
+                <a href="https://ee.kobotoolbox.org/x/f9y48cRE" target="_blank" rel="noreferrer">
+                  Candidater ici
                 </a>
               </Button>
 
