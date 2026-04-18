@@ -4,7 +4,9 @@ import { BriefcaseBusiness, Handshake, Wallet } from "lucide-react";
 const helpItems = [
   {
     icon: BriefcaseBusiness,
-    image: "/img/problem.png",
+    image: "/img/diagnostic.png",
+    imageWidth: 1536,
+    imageHeight: 1024,
     imageClassName: "object-cover object-center",
     eyebrow: "Diagnostic",
     title: "Accompagnement stratégique",
@@ -13,7 +15,9 @@ const helpItems = [
   },
   {
     icon: Handshake,
-    image: "/img/background-hero.png",
+    image: "/img/connexion.png",
+    imageWidth: 1536,
+    imageHeight: 1024,
     imageClassName: "object-cover object-center",
     eyebrow: "Connexions",
     title: "Mise en relation",
@@ -22,7 +26,9 @@ const helpItems = [
   },
   {
     icon: Wallet,
-    image: "/img/project.jpg",
+    image: "/img/solution.png",
+    imageWidth: 1536,
+    imageHeight: 1024,
     imageClassName: "object-cover object-center",
     eyebrow: "Solutions",
     title: "Orientation financière",
@@ -52,8 +58,9 @@ export default function SupportSection() {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    fill
-                    className={item.imageClassName}
+                    width={item.imageWidth}
+                    height={item.imageHeight}
+                    className={`block h-auto w-full ${item.imageClassName}`}
                     sizes="(max-width: 1024px) 100vw, 33vw"
                   />
                   <div className="support-card-overlay" />

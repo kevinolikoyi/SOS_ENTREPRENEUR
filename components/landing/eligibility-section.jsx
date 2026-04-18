@@ -10,12 +10,12 @@ const criteria = [
   },
   {
     text: "Ton projet existe déjà ou repose sur une base sérieuse.",
-    image: "/img/project.jpg",
+    image: "/img/project.png",
     position: "center 52%",
   },
   {
     text: "Tu es prêt à agir rapidement si tu es sélectionné.",
-    image: "/img/problem.png",
+    image: "/img/agir.png",
     position: "center 62%",
   },
   {

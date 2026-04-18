@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from "react";
 
+const TIME_LABELS = ["Jours", "Heures", "Minutes", "Secondes"];
+const INITIAL_TIME_LEFT = TIME_LABELS.map((label) => ({
+  label,
+  value: "00",
+}));
+
 function getEditionDeadline() {
   const now = new Date();
   return new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
@@ -25,11 +31,17 @@ function getTimeLeft() {
 }
 
 export default function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft);
+  const [timeLeft, setTimeLeft] = useState(INITIAL_TIME_LEFT);
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
+    const syncTimeLeft = () => {
       setTimeLeft(getTimeLeft());
+    };
+
+    syncTimeLeft();
+
+    const interval = window.setInterval(() => {
+      syncTimeLeft();
     }, 1000);
 
     return () => window.clearInterval(interval);
