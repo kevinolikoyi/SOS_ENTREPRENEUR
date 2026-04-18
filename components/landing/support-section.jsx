@@ -1,57 +1,80 @@
+import Image from "next/image";
 import { BriefcaseBusiness, Handshake, Wallet } from "lucide-react";
-
-import SectionHeading from "@/components/landing/section-heading";
 
 const helpItems = [
   {
     icon: BriefcaseBusiness,
-    title: "Accompagnement strategique",
+    image: "/img/problem.png",
+    imageClassName: "object-cover object-center",
+    eyebrow: "Diagnostic",
+    title: "Accompagnement stratégique",
     description:
-      "Nous analysons ta situation et nous t'aidons a remettre ton activite dans une direction claire et realiste.",
+      "Nous analysons ta situation et nous t'aidons à remettre ton activité dans une direction claire et réaliste.",
   },
   {
     icon: Handshake,
+    image: "/img/background-hero.png",
+    imageClassName: "object-cover object-center",
+    eyebrow: "Connexions",
     title: "Mise en relation",
     description:
-      "Tu peux etre connecte aux bons partenaires, mentors et relais utiles pour accelerer ton rebond.",
+      "Tu peux être connecté aux bons partenaires, mentors et relais utiles pour accélérer ton rebond.",
   },
   {
     icon: Wallet,
-    title: "Orientation financiere",
+    image: "/img/project.jpg",
+    imageClassName: "object-cover object-center",
+    eyebrow: "Solutions",
+    title: "Orientation financière",
     description:
-      "Quand c'est pertinent, nous t'orientons vers des solutions adaptees a ton niveau de maturite.",
+      "Quand c'est pertinent, nous t'orientons vers des solutions adaptées à ton niveau de maturité.",
   },
 ];
 
 export default function SupportSection() {
   return (
-    <section className="reference-surface tight-sections">
-      <div className="mx-auto max-w-6xl px-4 section-inner-padded">
-        <SectionHeading
-            title="On ne te laisse"
-          accent="pas tomber."
-        />
+    <section className="support-stage tight-sections">
+      <div className="mx-auto max-w-[1320px] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl font-black leading-[0.92] tracking-[-0.05em] text-[#24112c] sm:text-5xl lg:text-[4.5rem]">
+            On te laisse
+            <span className="block text-brand-glow">pas tomber.</span>
+          </h2>
+        </div>
 
-        <div className="mt-20 grid gap-5 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 lg:grid-cols-3 lg:gap-9">
           {helpItems.map((item) => {
             const Icon = item.icon;
 
             return (
-              <article
-                key={item.title}
-                className="rounded-[1.8rem] border border-[#ff8fd7] bg-brand-glow p-6 shadow-[0_18px_45px_rgba(255,65,187,0.28)] sm:p-7"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex size-14 items-center justify-center rounded-2xl border border-[#24112c]/10 bg-white text-brand-glow shadow-[0_10px_24px_rgba(36,17,44,0.12)]">
-                    <Icon className="size-7" />
+              <article key={item.title} className="support-card">
+                <div className="support-card-media">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className={item.imageClassName}
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                  />
+                  <div className="support-card-overlay" />
+                  <div className="support-card-badge">
+                    <div className="support-card-icon">
+                      <Icon className="size-5" />
+                    </div>
+                    <span className="text-sm font-semibold tracking-[-0.02em] text-white/90">
+                      {item.eyebrow}
+                    </span>
                   </div>
                 </div>
-                <h3 className="mt-6 text-2xl font-black tracking-tight text-[#24112c]">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-sm leading-8 text-[#24112c]/80 sm:text-[15px]">
-                  {item.description}
-                </p>
+
+                <div className="support-card-copy">
+                  <h3 className="text-[2rem] font-bold leading-[1.02] tracking-[-0.05em] sm:text-[2.15rem] text-brand-glow">
+                    {item.title}
+                  </h3>
+                  <p className="mt-5 text-lg leading-[1.5] tracking-[-0.02em] text-white/58 sm:text-[1.7rem] sm:leading-[1.42]">
+                    {item.description}
+                  </p>
+                </div>
               </article>
             );
           })}

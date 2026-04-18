@@ -63,10 +63,11 @@
 
   .hero-stage {
     background:
-      radial-gradient(circle at 8% 14%, rgba(255, 255, 255, 0.12), transparent 24%),
-      radial-gradient(circle at 36% 84%, rgba(255, 255, 255, 0.08), transparent 20%),
-      radial-gradient(circle at 68% 62%, rgba(255, 0, 153, 0.18), transparent 16%),
-      linear-gradient(90deg, #9d5cb3 0%, #6d397d 36%, #2b1834 72%, #170e1d 100%);
+      linear-gradient(90deg, rgba(157, 92, 179, 0.18) 0%, rgba(23, 14, 29, 0.38) 100%),
+      url("/img/background-hero.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     isolation: isolate;
   }
 
@@ -75,10 +76,9 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(90% 26% at 20% 4%, rgba(255, 255, 255, 0.08) 0%, transparent 70%),
-      radial-gradient(120% 36% at 14% 26%, rgba(255, 255, 255, 0.08) 0%, transparent 72%),
-      radial-gradient(100% 30% at 88% 54%, rgba(0, 0, 0, 0.32) 0%, transparent 70%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.12) 100%);
+      radial-gradient(90% 26% at 20% 4%, rgba(255, 255, 255, 0.06) 0%, transparent 70%),
+      radial-gradient(120% 36% at 14% 26%, rgba(255, 255, 255, 0.04) 0%, transparent 72%),
+      linear-gradient(90deg, rgba(129, 73, 151, 0.34) 0%, rgba(23, 14, 29, 0.5) 68%, rgba(13, 7, 17, 0.68) 100%);
     pointer-events: none;
   }
 
@@ -117,17 +117,17 @@
     font-family: var(--font-compacta), "Compacta BT", "Arial Narrow", Impact, var(--font-montserrat), sans-serif;
     color: #bd0a85;
     font-weight: 900;
-    -webkit-text-stroke: 5px #ffffff;
+    letter-spacing: -0.02em;
+    word-spacing: -0.07em;
     text-shadow:
-      1px 0 0 #ffffff,
-      -1px 0 0 #ffffff,
+      3px 0 0 #ffffff,
+    -3px 0 0 #ffffff,
+      2px 1px 0 #ffffff,
+    -2px 1px 0 #ffffff,
+      2px -1px 0 #ffffff,
+    -2px -1px 0 #ffffff,
       0 1px 0 #ffffff,
-      0 -1px 0 #ffffff,
-      2px 2px 0 #ffffff,
-      -2px 2px 0 #ffffff,
-      2px -2px 0 #ffffff,
-      -2px -2px 0 #ffffff,
-      0 10px 26px rgba(255, 0, 153, 0.16);
+      0 -1px 0 #ffffff;
   }
 
   .countdown-surface {
@@ -144,7 +144,8 @@
   .countdown-number {
     font-family: var(--font-montserrat), "Montserrat", "Segoe UI", sans-serif;
     color: #c40083;
-    font-weight: 300;
+    font-style: italic;
+    font-weight: 400;
   }
 
   .countdown-separator {
@@ -155,6 +156,64 @@
 
   .reference-surface {
     background: #ffffff;
+  }
+
+  .support-stage {
+    background: #ffffff;
+  }
+
+  .support-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .support-card-media {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 2rem;
+    background: #1b191c;
+    box-shadow:
+      0 24px 44px rgba(0, 0, 0, 0.22),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  }
+
+  .support-card-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.18) 100%);
+    pointer-events: none;
+  }
+
+  .support-card-badge {
+    position: absolute;
+    left: 1.4rem;
+    top: 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    border-radius: 9999px;
+    background: rgba(20, 15, 24, 0.76);
+    padding: 0.6rem 0.95rem;
+    backdrop-filter: blur(12px);
+  }
+
+  .support-card-icon {
+    display: flex;
+    width: 2.1rem;
+    height: 2.1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, #ff1ba8 0%, #cc007f 100%);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(255, 0, 153, 0.24);
+  }
+
+  .support-card-copy {
+    padding: 0 0.15rem;
   }
 
   .reference-card {
@@ -220,11 +279,77 @@
     backdrop-filter: blur(18px);
   }
 
+  .eligibility-kicker {
+    background: rgba(128, 67, 161, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    box-shadow:
+      0 18px 38px rgba(7, 0, 10, 0.24),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    backdrop-filter: blur(12px);
+  }
+
+  .eligibility-title {
+    font-family: var(--font-montserrat), "Montserrat", "Segoe UI", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 0.94;
+    text-shadow:
+      0 10px 32px rgba(0, 0, 0, 0.32),
+      0 2px 0 rgba(255, 255, 255, 0.05);
+  }
+
   .eligibility-pill-badge {
     background: linear-gradient(180deg, #ff1ba8 0%, #cc007f 100%);
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.08) inset,
       0 12px 24px rgba(255, 0, 153, 0.24);
+  }
+
+  .eligibility-orb {
+    position: relative;
+    width: 104px;
+    height: 104px;
+    will-change: transform;
+  }
+
+  .eligibility-orb-glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 148px;
+    height: 148px;
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle, rgba(255, 40, 177, 0.3) 0%, rgba(255, 40, 177, 0.08) 44%, transparent 72%);
+    filter: blur(4px);
+  }
+
+  .eligibility-orb-core {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.24), transparent 30%),
+      linear-gradient(180deg, rgba(255, 31, 168, 0.98) 0%, rgba(180, 0, 119, 0.98) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+      0 18px 40px rgba(13, 0, 18, 0.32),
+      0 0 24px rgba(255, 0, 153, 0.22);
+  }
+
+  .eligibility-orb-step {
+    color: #ffffff;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    line-height: 1;
   }
 
   .process-stage {
@@ -260,8 +385,9 @@
   }
 
   .process-card-muted {
-    opacity: 0.94;
-    transform: translateY(0) scale(0.985);
+    opacity: 1;
+    transform: translateY(0) scale(0.975);
+    filter: saturate(0.72) brightness(1.08);
   }
 
   .process-card-index {
@@ -271,7 +397,7 @@
   .process-path-grid {
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: 190px 86px 190px 86px 190px;
+    grid-template-rows: auto 130px auto 130px auto;
     align-items: start;
   }
 
@@ -280,36 +406,26 @@
     z-index: 2;
   }
 
+  .process-route-network {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
   .process-card-slot-1 {
-    grid-column: 1 / 6;
+    grid-column: 1 / 4;
     grid-row: 1;
   }
 
   .process-card-slot-2 {
-    grid-column: 2 / 7;
+    grid-column: 4 / 7;
     grid-row: 3;
   }
 
   .process-card-slot-3 {
-    grid-column: 1 / 6;
+    grid-column: 1 / 4;
     grid-row: 5;
-  }
-
-  .process-route {
-    position: relative;
-    z-index: 1;
-  }
-
-  .process-route-1 {
-    grid-column: 2 / 6;
-    grid-row: 2;
-    min-height: 86px;
-  }
-
-  .process-route-2 {
-    grid-column: 2 / 6;
-    grid-row: 4;
-    min-height: 86px;
   }
 
   .process-route-base {
@@ -361,23 +477,19 @@
       padding: 5rem 2rem;
     }
 
-    .process-path-grid {
-      max-height: calc(100vh - 8rem);
-    }
   }
 
   @media (max-width: 1023px) {
     .process-path-grid {
       grid-template-columns: 1fr;
-      grid-template-rows: auto 92px auto 92px auto;
+      grid-template-rows: auto auto auto;
       min-height: auto;
+      gap: 1.25rem;
     }
 
     .process-card-slot-1,
     .process-card-slot-2,
-    .process-card-slot-3,
-    .process-route-1,
-    .process-route-2 {
+    .process-card-slot-3 {
       grid-column: 1;
     }
 
@@ -385,20 +497,16 @@
       grid-row: 1;
     }
 
-    .process-route-1 {
+    .process-card-slot-2 {
       grid-row: 2;
     }
 
-    .process-card-slot-2 {
+    .process-card-slot-3 {
       grid-row: 3;
     }
 
-    .process-route-2 {
-      grid-row: 4;
-    }
-
-    .process-card-slot-3 {
-      grid-row: 5;
+    .process-route-network {
+      display: none;
     }
   }
 }

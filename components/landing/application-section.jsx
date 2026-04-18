@@ -20,7 +20,7 @@ export default function ApplicationSection() {
                 <span className="block text-brand-soft">maintenant.</span>
               </h2>
               <p className="mt-4 text-base leading-8 text-white">
-                Chaque edition retient un nombre limite de profils. Si ton activite peut
+                Chaque édition retient un nombre limité de profils. Si ton activité peut
                 rebondir avec le bon accompagnement, c'est le moment de te signaler.
               </p>
             </div>

@@ -36,15 +36,15 @@ export default function CountdownTimer() {
   }, []);
 
   return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap items-start justify-center gap-x-5 gap-y-6 sm:flex-nowrap sm:gap-x-6 lg:gap-x-8">
+    <div className="space-y-8 sm:space-y-10">
+      <div className="flex flex-wrap items-start justify-center gap-x-6 gap-y-7 sm:flex-nowrap sm:gap-x-8 lg:gap-x-10">
         {timeLeft.map((item, index) => (
-          <div key={item.label} className="flex items-start gap-5 lg:gap-8">
+          <div key={item.label} className="flex items-start gap-6 lg:gap-9">
             <div className="min-w-[120px] text-center sm:min-w-[140px] lg:min-w-[170px]">
               <p className="countdown-number text-[3.85rem] leading-none tracking-[-0.08em] sm:text-[5.7rem] lg:text-[7.6rem]">
                 {item.value}
               </p>
-              <p className="mt-2 text-lg font-light italic text-[#25142d] sm:text-2xl">
+              <p className="mt-3 text-lg italic text-[#25142d] sm:text-2xl">
                 {item.label}
               </p>
             </div>

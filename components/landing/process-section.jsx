@@ -1,30 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
-    label: "Etape 01",
-    title: "Tu soumets ton cas",
+    label: "Étape 01",
+    title: "Tu remplis le formulaire",
     description:
-      "Tu partages l'essentiel de ta situation, les blocages du moment et ce qui merite d'etre relance rapidement.",
+      "Tu remplis le formulaire en cliquant sur le lien « Candidater ici ». Ensuite, tu publies sur ton réseau une vidéo où tu essaies de vendre ton produit, ton service ou ton idée, tu poses ton problème et tu identifies nos réseaux dans la vidéo.",
   },
   {
-    label: "Etape 02",
-    title: "Nous etudions ton dossier",
+    label: "Étape 02",
+    title: "Les projets sont analysés",
     description:
-      "Les candidatures sont relues pour identifier les projets les plus solides, les plus urgents et les plus actionnables.",
+      "Les projets sont analysés en fonction de leur pertinence et de leur impact après la vidéo, notamment selon le nombre de ventes par rapport au nombre de vues.",
   },
   {
-    label: "Etape 03",
-    title: "Les profils retenus sont accompagnes",
+    label: "Étape 03",
+    title: "Les profils retenus sont accompagnés",
     description:
-      "3 entrepreneurs et 1 porteur de projet beneficient d'un accompagnement concret pour relancer leur trajectoire.",
+      "Les profils retenus sont 2 entrepreneurs et 1 porteur de projet. L'accompagnement va de 30 000 à 1 million.",
   },
 ];
 
 export default function ProcessSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const cardRefs = useRef([]);
 
   useEffect(() => {
     let ticking = false;
@@ -35,21 +36,27 @@ export default function ProcessSection() {
       ticking = true;
 
       window.requestAnimationFrame(() => {
-        const section = document.getElementById("process");
+        const cards = cardRefs.current.filter(Boolean);
 
-        if (!section) {
+        if (!cards.length) {
           ticking = false;
           return;
         }
 
-        const start = section.offsetTop;
-        const end = start + section.offsetHeight - window.innerHeight;
-        const rawProgress = end <= start ? 0 : (window.scrollY - start) / (end - start);
-        const progress = Math.min(0.999, Math.max(0, rawProgress));
-        const nextIndex = Math.min(
-          steps.length - 1,
-          Math.floor(progress * steps.length)
-        );
+        const viewportCenter = window.innerHeight * 0.52;
+        let nextIndex = 0;
+        let bestDistance = Number.POSITIVE_INFINITY;
+
+        cards.forEach((card, index) => {
+          const rect = card.getBoundingClientRect();
+          const cardCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(cardCenter - viewportCenter);
+
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            nextIndex = index;
+          }
+        });
 
         setActiveIndex(nextIndex);
         ticking = false;
@@ -67,27 +74,36 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" className="reference-surface relative py-16 lg:h-[220vh] lg:py-0">
-      <div className="process-stage relative overflow-hidden lg:sticky lg:top-0 lg:h-screen">
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-          <div className="grid w-full items-center gap-12 lg:grid-cols-[0.88fr_minmax(0,1.12fr)] lg:gap-16">
-            <div className="max-w-xl text-center lg:text-left">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#24112c]/42 sm:text-sm">
-                Parcours
-              </p>
-              <h2 className="mt-5 text-4xl font-black uppercase leading-[0.92] tracking-tight text-[#24112c] sm:text-6xl lg:text-[5.2rem]">
-                Comment ca
-                <span className="block text-brand-glow">marche</span>
-              </h2>
-              <p className="mt-6 max-w-lg text-base leading-8 text-[#24112c]/68 sm:text-lg">
-                Tu suis un chemin simple, lisible et progressif: candidature,
-                etude du dossier, puis accompagnement des profils retenus.
-              </p>
-            </div>
+    <section id="process" className="reference-surface relative py-16 sm:py-20 lg:py-24">
+      <div className="process-stage relative overflow-visible">
+        <div className="relative z-10 mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#24112c]/42 sm:text-sm">
+              Parcours
+            </p>
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.92] tracking-tight text-[#24112c] sm:text-6xl lg:text-[5.2rem]">
+              Comment ça
+              <span className="block text-brand-glow">marche</span>
+            </h2>
+          </div>
 
-            <div className="relative mx-auto w-full max-w-[720px]">
-              <div className="process-path-grid relative">
-                <div className="process-card-slot process-card-slot-1">
+          <div className="relative mx-auto mt-16 w-full">
+            <div className="process-path-grid relative">
+              <div className="process-route-network" aria-hidden="true">
+                <svg className="h-full w-full" viewBox="0 0 1200 880" fill="none" preserveAspectRatio="none">
+                  <path className="process-route-base" d="M500 188 H770 V366 H700" />
+                  <path className="process-route-glow" d="M500 188 H770 V366 H700" />
+                  <path className="process-route-base" d="M700 516 H430 V694 H500" />
+                  <path className="process-route-glow" d="M700 516 H430 V694 H500" />
+                </svg>
+              </div>
+
+              <div className="process-card-slot process-card-slot-1">
+                <div
+                  ref={(node) => {
+                    cardRefs.current[0] = node;
+                  }}
+                >
                   <article
                     className={`process-card rounded-[2rem] p-7 transition-all duration-500 sm:p-8 ${
                       activeIndex === 0 ? "process-card-active" : "process-card-muted"
@@ -113,15 +129,14 @@ export default function ProcessSection() {
                     </p>
                   </article>
                 </div>
+              </div>
 
-                <div className="process-route process-route-1" aria-hidden="true">
-                  <svg className="h-full w-full" viewBox="0 0 240 160" fill="none" preserveAspectRatio="none">
-                    <path className="process-route-base" d="M22 12 H208 V78 H42 V148" />
-                    <path className="process-route-glow" d="M22 12 H208 V78 H42 V148" />
-                  </svg>
-                </div>
-
-                <div className="process-card-slot process-card-slot-2">
+              <div className="process-card-slot process-card-slot-2">
+                <div
+                  ref={(node) => {
+                    cardRefs.current[1] = node;
+                  }}
+                >
                   <article
                     className={`process-card rounded-[2rem] p-7 transition-all duration-500 sm:p-8 ${
                       activeIndex === 1 ? "process-card-active" : "process-card-muted"
@@ -147,15 +162,14 @@ export default function ProcessSection() {
                     </p>
                   </article>
                 </div>
+              </div>
 
-                <div className="process-route process-route-2" aria-hidden="true">
-                  <svg className="h-full w-full" viewBox="0 0 240 160" fill="none" preserveAspectRatio="none">
-                    <path className="process-route-base" d="M218 12 H32 V78 H198 V148" />
-                    <path className="process-route-glow" d="M218 12 H32 V78 H198 V148" />
-                  </svg>
-                </div>
-
-                <div className="process-card-slot process-card-slot-3">
+              <div className="process-card-slot process-card-slot-3">
+                <div
+                  ref={(node) => {
+                    cardRefs.current[2] = node;
+                  }}
+                >
                   <article
                     className={`process-card rounded-[2rem] p-7 transition-all duration-500 sm:p-8 ${
                       activeIndex === 2 ? "process-card-active" : "process-card-muted"

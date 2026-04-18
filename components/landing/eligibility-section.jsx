@@ -4,17 +4,17 @@ import { useEffect, useState } from "react";
 
 const criteria = [
   {
-    text: "Tu vis une difficulte concrete dans ton activite.",
+    text: "Tu vis une difficulté concrète dans ton activité.",
     image: "/img/problem.png",
     position: "center 38%",
   },
   {
-    text: "Ton projet existe deja ou repose sur une base serieuse.",
+    text: "Ton projet existe déjà ou repose sur une base sérieuse.",
     image: "/img/project.jpg",
     position: "center 52%",
   },
   {
-    text: "Tu es pret a agir rapidement si tu es selectionne.",
+    text: "Tu es prêt à agir rapidement si tu es sélectionné.",
     image: "/img/problem.png",
     position: "center 62%",
   },
@@ -27,6 +27,7 @@ const criteria = [
 
 export default function EligibilitySection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [sectionProgress, setSectionProgress] = useState(0);
 
   useEffect(() => {
     let ticking = false;
@@ -53,6 +54,7 @@ export default function EligibilitySection() {
           Math.floor(progress * criteria.length)
         );
 
+        setSectionProgress(progress);
         setActiveIndex(nextIndex);
         ticking = false;
       });
@@ -67,6 +69,13 @@ export default function EligibilitySection() {
       window.removeEventListener("resize", handleScroll);
     };
   }, []);
+
+  const orbReveal = Math.min(sectionProgress / 0.16, 1);
+  const orbVerticalProgress = Math.min(sectionProgress / 0.88, 1);
+  const orbTop = 10 + orbVerticalProgress * 74;
+  const orbTranslateX = -130 + orbReveal * 162;
+  const orbScale = 0.55 + orbReveal * 0.45;
+  const orbGlowScale = 0.8 + orbReveal * 0.45;
 
   return (
     <section id="eligibility" className="relative h-[320vh]">
@@ -88,27 +97,41 @@ export default function EligibilitySection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.06),transparent_28%)]" />
 
         <div className="relative z-10 flex h-full items-center justify-center px-6 text-center">
-          <div className="max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.38em] text-white/55 sm:text-sm">
-              Critere 0{activeIndex + 1}
-            </p>
-            <p className="mt-6 text-3xl font-semibold leading-[1.06] text-white sm:text-5xl lg:text-[4.4rem]">
+          <div className="max-w-5xl">
+            <div className="eligibility-kicker mx-auto w-fit px-5 py-2 sm:px-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.08em] text-white sm:text-base">
+                Tu peux postuler si
+              </p>
+            </div>
+            
+            <h2 className="eligibility-title mx-auto mt-7 max-w-[13ch] text-4xl text-white sm:mt-8 sm:text-6xl lg:text-[5.2rem]">
               {criteria[activeIndex].text}
-            </p>
+            </h2>
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-8 z-20 flex justify-center px-4 sm:bottom-10">
-          <div className="eligibility-pill flex w-full max-w-[430px] items-center justify-between gap-4 rounded-full px-4 py-4 sm:px-5">
-            <div className="min-w-0 text-left">
-            
-              <p className="truncate text-lg font-semibold text-white sm:text-[1.65rem]">
-                Qui peut postuler ?
-              </p>
-            </div>
-
-            <div className="eligibility-pill-badge flex size-12 shrink-0 items-center justify-center rounded-full text-sm font-black text-white sm:size-14 sm:text-base">
-              0{activeIndex + 1}
+        <div
+          className="pointer-events-none absolute left-0 z-20"
+          style={{
+            top: `${orbTop}%`,
+            transform: `translate3d(${orbTranslateX}px, -50%, 0)`,
+          }}
+        >
+          <div
+            className="eligibility-orb flex items-center justify-center"
+            style={{
+              transform: `scale(${orbScale})`,
+            }}
+          >
+            <div
+              className="eligibility-orb-glow"
+              style={{
+                transform: `translate(-50%, -50%) scale(${orbGlowScale})`,
+                opacity: 0.2 + orbReveal * 0.35,
+              }}
+            />
+            <div className="eligibility-orb-core">
+              <span className="eligibility-orb-step">0{activeIndex + 1}</span>
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function SiteFooter() {
           +229 01 67 08 83 03
         </a>
 
-        <p className="text-sm text-white">(c) {year} SOS Entrepreneur - AS WORLD TECH - Benin</p>
+        <p className="text-sm text-white">(c) {year} SOS Entrepreneur - AS WORLD TECH - Bénin</p>
       </div>
     </footer>
   );
