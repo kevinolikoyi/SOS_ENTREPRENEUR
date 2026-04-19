@@ -28,9 +28,14 @@ const criteria = [
 export default function EligibilitySection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [sectionProgress, setSectionProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     let ticking = false;
+
+    const syncViewport = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
 
     const handleScroll = () => {
       if (ticking) return;
@@ -60,12 +65,15 @@ export default function EligibilitySection() {
       });
     };
 
+    syncViewport();
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", syncViewport);
     window.addEventListener("resize", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", syncViewport);
       window.removeEventListener("resize", handleScroll);
     };
   }, []);
@@ -74,7 +82,9 @@ export default function EligibilitySection() {
   const orbVerticalProgress = Math.min(sectionProgress / 0.88, 1);
   const orbTop = 10 + orbVerticalProgress * 74;
   const orbTranslateX = -130 + orbReveal * 162;
-  const orbScale = 0.55 + orbReveal * 0.45;
+  const orbScale = isMobile
+    ? 0.5 + orbReveal * 0.16
+    : 0.55 + orbReveal * 0.45;
   const orbGlowScale = 0.8 + orbReveal * 0.45;
 
   return (
@@ -113,8 +123,12 @@ export default function EligibilitySection() {
         <div
           className="pointer-events-none absolute left-0 z-20"
           style={{
-            top: `${orbTop}%`,
-            transform: `translate3d(${orbTranslateX}px, -50%, 0)`,
+            left: isMobile ? "50%" : "0",
+            top: isMobile ? "auto" : `${orbTop}%`,
+            bottom: isMobile ? "1.25rem" : "auto",
+            transform: isMobile
+              ? "translate3d(-50%, 0, 0)"
+              : `translate3d(${orbTranslateX}px, -50%, 0)`,
           }}
         >
           <div

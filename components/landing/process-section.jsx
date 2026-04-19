@@ -13,13 +13,13 @@ const steps = [
     label: "Étape 02",
     title: "Les projets sont analysés",
     description:
-      "Les projets sont analysés en fonction de leur pertinence et de leur impact après la vidéo, notamment selon le nombre de ventes par rapport au nombre de vues.",
+      "Les projets sont analysés selon leur pertinence, impact et intérêts des internautes (vues, partages, likes, intentions d'achats, interactions, achats...) générés à travers la vidéo de présentation du candidat et par la décision du jury anonyme présidé par Monsieur Richard G. ODJRADO.",
   },
   {
     label: "Étape 03",
     title: "Les profils retenus sont accompagnés",
     description:
-      "Les profils retenus sont 2 entrepreneurs et 1 porteur de projet. L'accompagnement va de 30 000 à 1 million.",
+      "2 entrepreneurs et 1 porteur de projet seront retenus. Ils bénéficieront chacun d'un accompagnement adapté à leurs besoins. L'accompagnement financier va de 30.000 à 1.000.000 XOF",
   },
 ];
 

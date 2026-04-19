@@ -22,7 +22,7 @@ const helpItems = [
     eyebrow: "Connexions",
     title: "Mise en relation",
     description:
-      "Tu peux être connecté aux bons partenaires, mentors et relais utiles pour accélérer ton rebond.",
+      "Tu peux être connecté aux bons partenaires, mentors et relais utiles pour accélérer ton rebond, ton développement ou ta croissance.",
   },
   {
     icon: Wallet,

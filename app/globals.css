@@ -351,6 +351,22 @@
     line-height: 1;
   }
 
+  @media (max-width: 639px) {
+    .eligibility-orb {
+      width: 82px;
+      height: 82px;
+    }
+
+    .eligibility-orb-glow {
+      width: 116px;
+      height: 116px;
+    }
+
+    .eligibility-orb-step {
+      font-size: 1.65rem;
+    }
+  }
+
   .process-stage {
     background:
       radial-gradient(circle at 12% 12%, rgba(255, 143, 215, 0.12), transparent 20%),

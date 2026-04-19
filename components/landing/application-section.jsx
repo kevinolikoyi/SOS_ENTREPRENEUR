@@ -21,7 +21,7 @@ export default function ApplicationSection() {
               </h2>
               <p className="mt-4 text-base leading-8 text-white">
                 Chaque édition retient un nombre limité de profils. Si ton activité peut
-                rebondir avec le bon accompagnement, c'est le moment de te signaler.
+                rebondir avec le bon accompagnement, c'est le moment de te lancer.
               </p>
             </div>
 
