@@ -31,7 +31,22 @@ export default function HeroSection() {
               <div className="order-1 flex flex-col items-center pt-4 text-center lg:absolute lg:left-[46%] lg:top-1/2 lg:z-20 lg:w-[560px] lg:-translate-y-1/2 lg:items-start lg:pt-0 lg:text-left xl:left-[47%]">
                 <div className="mt-6 max-w-[560px] lg:mt-0">
                   
-                  <p className="hero-kicker whitespace-nowrap text-[1.6rem] sm:text-3xl lg:text-[3.4rem]">
+                  <div
+                    id="hero-brand-mark"
+                    className="-mt-12 flex w-full justify-center sm:-mt-10 lg:-mt-4 lg:justify-start"
+                  >
+                    <Image
+                      src="/img/logo-sos-entrepreneur.png"
+                      alt="SOS Entrepreneur"
+                      width={220}
+                      height={200}
+                      priority
+                      className="h-auto w-[132px] sm:w-[168px] lg:w-[220px]"
+                      sizes="(max-width: 640px) 132px, (max-width: 1024px) 168px, 220px"
+                    />
+                  </div>
+
+                  <p className="hero-kicker mt-5 whitespace-nowrap text-[1.6rem] sm:text-3xl lg:mt-6 lg:text-[3.4rem]">
                     Entrepreneur en difficulté ?
                   </p>
 
