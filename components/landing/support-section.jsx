@@ -42,7 +42,7 @@ export default function SupportSection() {
     <section className="support-stage tight-sections">
       <div className="mx-auto max-w-[1320px] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-black leading-[0.92] tracking-[-0.05em] text-[#24112c] sm:text-5xl lg:text-[4.5rem]">
+          <h2 className="text-4xl font-black leading-[0.92] tracking-[-0.05em] text-[#0e3b61] sm:text-5xl lg:text-[4.5rem]">
             On te laisse
             <span className="block text-brand-glow">pas tomber.</span>
           </h2>

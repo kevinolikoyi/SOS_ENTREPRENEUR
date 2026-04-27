@@ -78,10 +78,10 @@ export default function ProcessSection() {
       <div className="process-stage relative overflow-visible">
         <div className="relative z-10 mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#24112c]/42 sm:text-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#0e3b61]/42 sm:text-sm">
               Parcours
             </p>
-            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.92] tracking-tight text-[#24112c] sm:text-6xl lg:text-[5.2rem]">
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.92] tracking-tight text-[#0e3b61] sm:text-6xl lg:text-[5.2rem]">
               Comment ça
               <span className="block text-brand-glow">marche</span>
             </h2>
@@ -119,7 +119,7 @@ export default function ProcessSection() {
                         </h3>
                       </div>
 
-                      <div className="process-card-index flex size-12 shrink-0 items-center justify-center rounded-full bg-[#f514a2] text-sm font-black text-white sm:size-14 sm:text-base">
+                      <div className="process-card-index flex size-12 shrink-0 items-center justify-center rounded-full bg-[#2f84c6] text-sm font-black text-white sm:size-14 sm:text-base">
                         01
                       </div>
                     </div>
@@ -152,7 +152,7 @@ export default function ProcessSection() {
                         </h3>
                       </div>
 
-                      <div className="process-card-index flex size-12 shrink-0 items-center justify-center rounded-full bg-[#f514a2] text-sm font-black text-white sm:size-14 sm:text-base">
+                      <div className="process-card-index flex size-12 shrink-0 items-center justify-center rounded-full bg-[#2f84c6] text-sm font-black text-white sm:size-14 sm:text-base">
                         02
                       </div>
                     </div>
@@ -185,7 +185,7 @@ export default function ProcessSection() {
                         </h3>
                       </div>
 
-                      <div className="process-card-index flex size-12 shrink-0 items-center justify-center rounded-full bg-[#f514a2] text-sm font-black text-white sm:size-14 sm:text-base">
+                      <div className="process-card-index flex size-12 shrink-0 items-center justify-center rounded-full bg-[#2f84c6] text-sm font-black text-white sm:size-14 sm:text-base">
                         03
                       </div>
                     </div>

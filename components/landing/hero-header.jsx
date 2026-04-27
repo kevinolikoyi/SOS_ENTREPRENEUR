@@ -73,7 +73,7 @@ export default function HeroHeader() {
         className="pointer-events-none absolute inset-0 hero-header"
         style={{
           opacity: easedProgress,
-          boxShadow: `0 18px 42px rgba(12, 4, 16, ${0.22 * easedProgress})`,
+          boxShadow: `0 18px 42px rgba(10, 30, 48, ${0.22 * easedProgress})`,
         }}
       />
 

@@ -56,7 +56,7 @@ export default function CountdownTimer() {
               <p className="countdown-number text-[3.85rem] leading-none tracking-[-0.08em] sm:text-[5.7rem] lg:text-[7.6rem]">
                 {item.value}
               </p>
-              <p className="mt-3 text-lg italic text-[#25142d] sm:text-2xl">
+              <p className="mt-3 text-lg italic text-[#0e3b61] sm:text-2xl">
                 {item.label}
               </p>
             </div>
