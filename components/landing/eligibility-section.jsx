@@ -114,7 +114,12 @@ export default function EligibilitySection() {
               </p>
             </div>
             
-            <h2 className="eligibility-title mx-auto mt-7 max-w-[13ch] text-4xl text-white sm:mt-8 sm:text-6xl lg:text-[5.2rem]">
+            <h2
+              key={isMobile ? activeIndex : "eligibility-title"}
+              className={`eligibility-title mx-auto mt-7 max-w-[13ch] text-4xl text-white sm:mt-8 sm:text-6xl lg:text-[5.2rem] ${
+                isMobile ? "eligibility-title-mobile-reveal" : ""
+              }`}
+            >
               {criteria[activeIndex].text}
             </h2>
           </div>

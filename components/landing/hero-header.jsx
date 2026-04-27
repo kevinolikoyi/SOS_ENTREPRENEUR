@@ -73,7 +73,7 @@ export default function HeroHeader() {
         className="pointer-events-none absolute inset-0 hero-header"
         style={{
           opacity: easedProgress,
-          boxShadow: `0 18px 42px rgba(10, 30, 48, ${0.22 * easedProgress})`,
+          boxShadow: `0 18px 42px rgba(4, 17, 29, ${0.24 * easedProgress})`,
         }}
       />
 
@@ -85,6 +85,9 @@ export default function HeroHeader() {
         }}
       >
         <div
+          id="hero-logo-target"
+          aria-hidden="true"
+          className="pointer-events-none"
           style={{
             opacity: easedProgress,
             transform: `translate3d(0, ${logoTranslateY}px, 0) scale(${0.94 + 0.06 * easedProgress})`,
@@ -97,7 +100,7 @@ export default function HeroHeader() {
             width={64}
             height={58}
             priority
-            className="h-auto w-[52px] sm:w-[64px]"
+            className="h-auto w-[52px] opacity-0 sm:w-[64px]"
           />
         </div>
 

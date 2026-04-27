@@ -1,4 +1,5 @@
 import * as React from "react";
+
 const SVGComponent = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +15,7 @@ const SVGComponent = (props) => (
       transform="matrix( 2.93764575636081, -0.0348214029943, -1.28258459009453e-13, 2.93764575636086,14.1074662467627, 103.098481431251)"
       fontSize="35.021px"
     >
-      <tspan fontSize="35.021px" fontFamily="Compacta BT" fill="#2F84C6">
+      <tspan fontSize="35.021px" fontFamily="Compacta BT" fill="#e52e76">
         {"On te laisse pas tomber "}
       </tspan>
     </text>
@@ -28,10 +29,11 @@ const SVGComponent = (props) => (
       transform="matrix( 2.93764575636081, -0.0348214029943, -1.28258459009453e-13, 2.93764575636086,14.1074662467627, 103.098481431251)"
       fontSize="35.021px"
     >
-      <tspan fontSize="35.021px" fontFamily="Compacta BT" fill="#2F84C6">
+      <tspan fontSize="35.021px" fontFamily="Compacta BT" fill="#e52e76">
         {"On te laisse pas tomber "}
       </tspan>
     </text>
   </svg>
 );
+
 export default SVGComponent;

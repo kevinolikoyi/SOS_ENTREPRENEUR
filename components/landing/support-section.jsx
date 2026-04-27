@@ -75,10 +75,10 @@ export default function SupportSection() {
                 </div>
 
                 <div className="support-card-copy">
-                  <h3 className="text-[2rem] font-bold leading-[1.02] tracking-[-0.05em] sm:text-[2.15rem] text-brand-glow">
+                  <h3 className="text-[2rem] font-bold leading-[1.02] tracking-[-0.05em] text-[#0e3b61] sm:text-[2.15rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-5 text-lg leading-[1.5] tracking-[-0.02em] text-white/58 sm:text-[1.7rem] sm:leading-[1.42]">
+                  <p className="mt-5 text-lg leading-[1.5] tracking-[-0.02em] text-[#0e3b61]/70 sm:text-[1.7rem] sm:leading-[1.42]">
                     {item.description}
                   </p>
                 </div>
