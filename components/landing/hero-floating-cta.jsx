@@ -3,6 +3,8 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import { CAMPAIGN_APPLY_PATH } from "@/lib/campaign";
+
 import { Button } from "@/components/ui/button";
 
 function clamp(value, min, max) {
@@ -198,7 +200,7 @@ export default function HeroFloatingCta() {
         className={`glow-button pointer-events-auto h-full w-full border-0 px-6 font-black text-white transition-none hover:translate-y-0 ${fontSizeClass} ${shouldShake ? "urgent-cta" : ""}`}
         style={{ gap: `${8 * arrowOpacity}px` }}
       >
-        <a href="https://ee.kobotoolbox.org/x/f9y48cRE" target="_blank" rel="noreferrer">
+        <a href={CAMPAIGN_APPLY_PATH}>
           <span>Candidater ici</span>
           <span
             aria-hidden="true"

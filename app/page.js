@@ -1,4 +1,5 @@
 import ApplicationSection from "@/components/landing/application-section";
+import CampaignRedirect from "@/components/campaign-redirect";
 import CountdownSection from "@/components/landing/countdown-section";
 import EligibilitySection from "@/components/landing/eligibility-section";
 import HeroFloatingCta from "@/components/landing/hero-floating-cta";
@@ -13,6 +14,7 @@ import SupportSection from "@/components/landing/support-section";
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <CampaignRedirect />
       <HeroHeader />
       <HeroFloatingLogo />
       <HeroFloatingCta />

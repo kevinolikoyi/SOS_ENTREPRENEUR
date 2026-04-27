@@ -1,5 +1,7 @@
 import { ArrowRight } from "lucide-react";
 
+import { CAMPAIGN_APPLY_PATH } from "@/lib/campaign";
+
 import { Button } from "@/components/ui/button";
 
 export default function ApplicationSection() {
@@ -31,7 +33,7 @@ export default function ApplicationSection() {
                 size="lg"
                 className="glow-button min-w-[240px] border-0 px-7 text-base text-white"
               >
-                <a href="https://ee.kobotoolbox.org/x/f9y48cRE" target="_blank" rel="noreferrer">
+                <a href={CAMPAIGN_APPLY_PATH}>
                   Candidater ici
                 </a>
               </Button>

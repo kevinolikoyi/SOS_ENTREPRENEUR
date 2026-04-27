@@ -8,12 +8,12 @@ export default function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-center sm:px-6 md:flex-row md:text-left">
         <a
           className="inline-flex items-center gap-2 text-sm font-semibold text-brand-glow transition-colors hover:text-brand-soft"
-          href="https://wa.me/2290155780303"
+          href="https://wa.me/2290166593997"
           target="_blank"
           rel="noreferrer"
         >
           <MessageCircle className="size-4" />
-          +229 01 55 78 03 03
+          +229 01 66 59 39 97
         </a>
 
         <p className="text-sm text-white">(c) {year} SOS Entrepreneur - AS WORLD TECH - Bénin</p>

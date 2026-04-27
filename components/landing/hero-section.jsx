@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
+import { CAMPAIGN_APPLY_PATH } from "@/lib/campaign";
+
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
@@ -93,7 +95,7 @@ export default function HeroSection() {
                       size="lg"
                       className="glow-button h-12 min-w-[250px] border-0 px-7 text-base font-black text-white transition-opacity duration-300 sm:h-14 sm:min-w-[320px]"
                     >
-                      <a href="https://ee.kobotoolbox.org/x/f9y48cRE" target="_blank" rel="noreferrer">
+                      <a href={CAMPAIGN_APPLY_PATH}>
                         Candidater ici
                         <ArrowRight />
                       </a>
