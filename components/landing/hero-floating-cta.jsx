@@ -35,8 +35,11 @@ function buildOverlayLayout(sourceRect, targetRect, progress) {
 
 export default function HeroFloatingCta() {
   const [overlay, setOverlay] = useState(null);
+  const [shouldShake, setShouldShake] = useState(false);
   const rafRef = useRef(null);
   const snapshotRef = useRef(null);
+  const shakeTimeoutRef = useRef(null);
+  const wasPastCountdownRef = useRef(false);
 
   useEffect(() => {
     const getElements = () => {
@@ -45,6 +48,44 @@ export default function HeroFloatingCta() {
       const trigger = document.getElementById("hero-cta-trigger");
 
       return { source, target, trigger };
+    };
+
+    const syncUrgency = () => {
+      const countdown = document.getElementById("countdown");
+
+      if (!countdown) {
+        wasPastCountdownRef.current = false;
+        setShouldShake(false);
+        return;
+      }
+
+      const countdownRect = countdown.getBoundingClientRect();
+      const compactHeaderHeight = window.innerWidth < 640 ? 72 : 80;
+      const isPastCountdown = countdownRect.bottom <= compactHeaderHeight + 16;
+
+      if (isPastCountdown && !wasPastCountdownRef.current) {
+        setShouldShake(true);
+
+        if (shakeTimeoutRef.current !== null) {
+          window.clearTimeout(shakeTimeoutRef.current);
+        }
+
+        shakeTimeoutRef.current = window.setTimeout(() => {
+          shakeTimeoutRef.current = null;
+          setShouldShake(false);
+        }, 820);
+      }
+
+      if (!isPastCountdown && wasPastCountdownRef.current) {
+        setShouldShake(false);
+
+        if (shakeTimeoutRef.current !== null) {
+          window.clearTimeout(shakeTimeoutRef.current);
+          shakeTimeoutRef.current = null;
+        }
+      }
+
+      wasPastCountdownRef.current = isPastCountdown;
     };
 
     const setSourceVisible = (visible) => {
@@ -59,6 +100,7 @@ export default function HeroFloatingCta() {
 
     const syncOverlay = () => {
       const { source, target, trigger } = getElements();
+      syncUrgency();
 
       if (!source || !target || !trigger) {
         snapshotRef.current = null;
@@ -123,6 +165,10 @@ export default function HeroFloatingCta() {
       if (rafRef.current !== null) {
         window.cancelAnimationFrame(rafRef.current);
       }
+
+      if (shakeTimeoutRef.current !== null) {
+        window.clearTimeout(shakeTimeoutRef.current);
+      }
     };
   }, []);
 
@@ -149,7 +195,7 @@ export default function HeroFloatingCta() {
       <Button
         asChild
         size="lg"
-        className={`glow-button pointer-events-auto h-full w-full border-0 px-6 font-black text-white transition-none hover:translate-y-0 ${fontSizeClass}`}
+        className={`glow-button pointer-events-auto h-full w-full border-0 px-6 font-black text-white transition-none hover:translate-y-0 ${fontSizeClass} ${shouldShake ? "urgent-cta" : ""}`}
         style={{ gap: `${8 * arrowOpacity}px` }}
       >
         <a href="https://ee.kobotoolbox.org/x/f9y48cRE" target="_blank" rel="noreferrer">

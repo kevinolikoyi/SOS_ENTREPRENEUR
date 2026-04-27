@@ -31,34 +31,45 @@ export default function HeroSection() {
               <div className="order-1 flex flex-col items-center pt-4 text-center lg:absolute lg:left-[46%] lg:top-1/2 lg:z-20 lg:w-[560px] lg:-translate-y-1/2 lg:items-start lg:pt-0 lg:text-left xl:left-[47%]">
                 <div className="mt-6 max-w-[560px] lg:mt-0">
                   
-                  <div
-                    id="hero-brand-mark"
-                    className="-mt-12 flex w-full justify-center sm:-mt-10 lg:-mt-4 lg:justify-start"
-                  >
-                    <Image
-                      src="/img/logo-sos-entrepreneur.png"
-                      alt="SOS Entrepreneur"
-                      width={220}
-                      height={200}
-                      priority
-                      className="h-auto w-[132px] sm:w-[168px] lg:w-[220px]"
-                      sizes="(max-width: 640px) 132px, (max-width: 1024px) 168px, 220px"
-                    />
+                  <div className="-mt-12 flex w-full justify-center sm:-mt-10 lg:-mt-4 lg:justify-start">
+                    <div id="hero-brand-mark" className="inline-flex">
+                      <Image
+                        src="/img/logo-sos-entrepreneur.png"
+                        alt="SOS Entrepreneur"
+                        width={220}
+                        height={200}
+                        priority
+                        className="h-auto w-[132px] sm:w-[168px] lg:w-[220px]"
+                        sizes="(max-width: 640px) 132px, (max-width: 1024px) 168px, 220px"
+                      />
+                    </div>
                   </div>
 
                   <p className="hero-kicker mt-5 whitespace-nowrap text-[1.6rem] sm:text-3xl lg:mt-6 lg:text-[3.4rem]">
                     Entrepreneur en difficulté ?
                   </p>
 
-                  <h1 className="mt-4 flex justify-center lg:justify-start" aria-label="On te laisse pas tomber !">
+                  <h1
+                    className="mt-4 flex max-w-full items-center justify-center gap-1.5 lg:justify-start lg:gap-2"
+                    aria-label="On te laisse pas tomber !"
+                  >
                     <Image
                       src="/img/hero-title.png"
-                      alt="On te laisse pas tomber !"
-                      width={668}
-                      height={115}
+                      alt="On te laisse pas tomber"
+                      width={539}
+                      height={107}
                       priority
-                      className="h-auto w-[300px] sm:w-[430px] lg:w-[668px]"
-                      sizes="(max-width: 640px) 300px, (max-width: 1024px) 430px, 668px"
+                      className="h-auto w-[76vw] max-w-[300px] sm:w-[430px] sm:max-w-none lg:w-[539px]"
+                      sizes="(max-width: 640px) 76vw, (max-width: 1024px) 430px, 539px"
+                    />
+                    <Image
+                      src="/img/hero-exclamation.png"
+                      alt=""
+                      width={64}
+                      height={150}
+                      priority
+                      className="h-auto w-[7vw] max-w-[30px] sm:w-[38px] sm:max-w-none lg:w-[46px]"
+                      sizes="(max-width: 640px) 7vw, (max-width: 1024px) 38px, 46px"
                     />
                   </h1>
 

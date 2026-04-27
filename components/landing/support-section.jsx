@@ -42,7 +42,7 @@ export default function SupportSection() {
     <section className="support-stage tight-sections">
       <div className="mx-auto max-w-[1320px] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-black leading-[0.92] tracking-[-0.05em] text-[#24112c] sm:text-5xl lg:text-[4.5rem]">
+          <h2 className="text-4xl font-black leading-[0.92] tracking-[-0.05em] text-[#0e3b61] sm:text-5xl lg:text-[4.5rem]">
             On te laisse
             <span className="block text-brand-glow">pas tomber.</span>
           </h2>
@@ -75,10 +75,10 @@ export default function SupportSection() {
                 </div>
 
                 <div className="support-card-copy">
-                  <h3 className="text-[2rem] font-bold leading-[1.02] tracking-[-0.05em] sm:text-[2.15rem] text-brand-glow">
+                  <h3 className="text-[2rem] font-bold leading-[1.02] tracking-[-0.05em] text-[#0e3b61] sm:text-[2.15rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-5 text-lg leading-[1.5] tracking-[-0.02em] text-white/58 sm:text-[1.7rem] sm:leading-[1.42]">
+                  <p className="mt-5 text-lg leading-[1.5] tracking-[-0.02em] text-[#0e3b61]/70 sm:text-[1.7rem] sm:leading-[1.42]">
                     {item.description}
                   </p>
                 </div>
