@@ -6,8 +6,7 @@ const steps = [
   {
     label: "Étape 01",
     title: "Candidature",
-    description:
-      "Tu remplis le formulaire que tu peux trouver en cliquant sur le lien « Candidater ici »."
+    description: "Tu remplis le formulaire que tu peux trouver en cliquant sur le lien « Candidater ici ».",
   },
   {
     label: "Étape 02",
@@ -159,13 +158,7 @@ export default function ProcessSection() {
         });
 
         if (cardCenters.length >= 2) {
-          setRouteProgress(
-            getBetweenProgress(
-              viewportCenter,
-              cardCenters[0],
-              cardCenters[cardCenters.length - 1]
-            )
-          );
+          setRouteProgress(getBetweenProgress(viewportCenter, cardCenters[0], cardCenters[cardCenters.length - 1]));
         }
 
         setActiveIndex(nextIndex);
@@ -187,10 +180,7 @@ export default function ProcessSection() {
     const stepNumber = String(index + 1).padStart(2, "0");
 
     return (
-      <div
-        key={step.title}
-        className={`process-card-slot ${extraClassName}`.trim()}
-      >
+      <div key={step.title} className={`process-card-slot ${extraClassName}`.trim()}>
         <div
           ref={(node) => {
             cardRefs.current[index] = node;
@@ -198,16 +188,12 @@ export default function ProcessSection() {
         >
           <article
             className={`process-card rounded-[2rem] p-7 transition-all duration-500 sm:p-8 ${
-              activeIndex === index
-                ? "process-card-active"
-                : "process-card-muted"
+              activeIndex === index ? "process-card-active" : "process-card-muted"
             }`}
           >
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-soft">
-                  {step.label}
-                </p>
+                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-soft">{step.label}</p>
                 <h3 className="mt-4 max-w-[16ch] text-2xl font-black leading-[1] tracking-tight text-white sm:text-[2rem]">
                   {step.title}
                 </h3>
@@ -218,9 +204,7 @@ export default function ProcessSection() {
               </div>
             </div>
 
-            <p className="mt-6 max-w-[34rem] text-sm leading-7 text-white sm:text-[15px]">
-              {step.description}
-            </p>
+            <p className="mt-6 max-w-[34rem] text-sm leading-7 text-white sm:text-[15px]">{step.description}</p>
           </article>
         </div>
       </div>
@@ -232,9 +216,7 @@ export default function ProcessSection() {
       <div className="process-stage relative overflow-visible">
         <div className="relative z-10 mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#0e3b61]/48 sm:text-sm">
-              Parcours
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#0e3b61]/48 sm:text-sm">Parcours</p>
             <h2 className="mt-5 text-4xl font-black uppercase leading-[0.92] tracking-tight text-[#0e3b61] sm:text-6xl lg:text-[5.2rem]">
               Comment ça
               <span className="block text-brand-glow">marche</span>
