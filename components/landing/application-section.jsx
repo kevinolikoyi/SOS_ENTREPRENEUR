@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 
-import { CAMPAIGN_APPLY_PATH } from "@/lib/campaign";
+import { CAMPAIGN_STATUS_PATH } from "@/lib/campaign";
 
 import { Button } from "@/components/ui/button";
 
@@ -18,12 +18,12 @@ export default function ApplicationSection() {
                 Candidature
               </p>
               <h2 className="mt-4 text-4xl font-black uppercase leading-[0.96] tracking-tight text-white sm:text-5xl">
-                Candidater ici
-                <span className="block text-brand-soft">maintenant.</span>
+                Candidatures
+                <span className="block text-brand-soft">clôturées.</span>
               </h2>
               <p className="mt-4 text-base leading-8 text-white">
-                Chaque édition retient un nombre limité de profils. Si ton activité peut
-                rebondir avec le bon accompagnement, c'est le moment de te lancer.
+                Les candidatures sont clôturées. Cliquez sur ma candidature
+                pour voir si vous faites partie des candidats retenus.
               </p>
             </div>
 
@@ -33,9 +33,7 @@ export default function ApplicationSection() {
                 size="lg"
                 className="glow-button min-w-[240px] border-0 px-7 text-base text-white"
               >
-                <a href={CAMPAIGN_APPLY_PATH}>
-                  Candidater ici
-                </a>
+                <a href={CAMPAIGN_STATUS_PATH}>Ma candidature</a>
               </Button>
 
               <Button

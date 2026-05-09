@@ -1,0 +1,4 @@
+[
+  { "email": "retenu@test.com", "telephone": "97000001", "statut": "retenu" },
+  { "email": "nonretenu@test.com", "telephone": "97000002", "statut": "non retenu" }
+]
