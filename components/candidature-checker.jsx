@@ -40,10 +40,10 @@ export default function CandidatureChecker() {
       }
 
       if (payload.selected) {
+        const name = payload.name ? `, ${payload.name}` : "";
         setResult({
           tone: "success",
-          message:
-            "Félicitations, votre candidature fait partie des profils retenus pour la suite du processus.",
+          message: `Félicitations${name} ! Votre candidature fait partie des profils retenus pour la suite du processus.`,
         });
         return;
       }
@@ -60,7 +60,7 @@ export default function CandidatureChecker() {
       setResult({
         tone: "warning",
         message:
-          "Nous n'avons pas trouvé de candidature retenue avec cet email ou ce numéro. Vérifiez les informations saisies et réessayez.",
+          "Nous n'avons pas trouvé de candidature retenue avec cet identifiant. Si vous avez saisi un numéro de téléphone, essayez avec votre adresse email, et vice versa.",
       });
     } catch {
       setResult({

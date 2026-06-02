@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-import { CAMPAIGN_APPLY_PATH } from "@/lib/campaign";
+import { CAMPAIGN_STATUS_PATH } from "@/lib/campaign";
 
 import { Button } from "@/components/ui/button";
 
@@ -95,8 +95,8 @@ export default function HeroSection() {
                       size="lg"
                       className="glow-button h-12 min-w-[250px] border-0 px-7 text-base font-black text-white transition-opacity duration-300 sm:h-14 sm:min-w-[320px]"
                     >
-                      <a href={CAMPAIGN_APPLY_PATH}>
-                        Candidater ici
+                      <a href={CAMPAIGN_STATUS_PATH}>
+                        Mon résultat
                         <ArrowRight />
                       </a>
                     </Button>

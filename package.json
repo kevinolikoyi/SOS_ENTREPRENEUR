@@ -8,8 +8,9 @@
     "start": "next start",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "cy:run:ci": "cypress run --config baseUrl=http://localhost:3001",
     "test": "vitest run",
-    "test:e2e": "start-server-and-test dev http://localhost:3000 cy:run",
+    "test:e2e": "start-server-and-test \"next dev -p 3001\" http://localhost:3001 cy:run:ci",
     "prepare": "husky"
   },
   "dependencies": {

@@ -118,7 +118,7 @@ export default function HeroHeader() {
             className="glow-button pointer-events-none h-10 min-w-[210px] border-0 px-7 text-base font-extrabold tracking-[-0.01em] text-white opacity-0"
           >
             <span>
-              Candidater ici
+              Mon résultat
               <ArrowRight />
             </span>
           </Button>

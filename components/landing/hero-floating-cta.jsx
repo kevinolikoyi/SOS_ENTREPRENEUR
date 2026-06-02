@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-import { CAMPAIGN_APPLY_PATH } from "@/lib/campaign";
+import { CAMPAIGN_STATUS_PATH } from "@/lib/campaign";
 
 import { Button } from "@/components/ui/button";
 
@@ -200,8 +200,8 @@ export default function HeroFloatingCta() {
         className={`glow-button pointer-events-auto h-full w-full border-0 px-6 font-black text-white transition-none hover:translate-y-0 ${fontSizeClass} ${shouldShake ? "urgent-cta" : ""}`}
         style={{ gap: `${8 * arrowOpacity}px` }}
       >
-        <a href={CAMPAIGN_APPLY_PATH}>
-          <span>Candidater ici</span>
+        <a href={CAMPAIGN_STATUS_PATH}>
+          <span>Mon résultat</span>
           <span
             aria-hidden="true"
             className="inline-flex shrink-0 overflow-hidden transition-none"

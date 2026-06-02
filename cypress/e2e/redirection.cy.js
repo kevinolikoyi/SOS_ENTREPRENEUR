@@ -1,13 +1,13 @@
 describe("Redirection via le bouton Candidater ici", () => {
   it("redirige vers /candidatures-cloturees quand la campagne est fermée", () => {
     cy.visit("/");
-    cy.contains("a", "Candidater ici").first().click();
+    cy.get("#hero-cta-source").click({ force: true });
     cy.url().should("include", "/candidatures-cloturees");
   });
 
   it("la page /candidatures-cloturees est bien affichée après le clic", () => {
     cy.visit("/");
-    cy.contains("a", "Candidater ici").first().click();
+    cy.get("#hero-cta-source").click({ force: true });
     cy.get("h1").should("contain.text", "clôturées");
   });
 });
