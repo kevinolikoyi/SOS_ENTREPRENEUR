@@ -58,9 +58,9 @@ export default function CandidatureChecker() {
       }
 
       setResult({
-        tone: "warning",
+        tone: "error",
         message:
-          "Nous n'avons pas trouvé de candidature retenue avec cet identifiant. Si vous avez saisi un numéro de téléphone, essayez avec votre adresse email, et vice versa.",
+          "Votre candidature n'a pas été retenue parmi les 100 candidats présélectionnés.",
       });
     } catch {
       setResult({
@@ -77,6 +77,7 @@ export default function CandidatureChecker() {
     success: "border-emerald-500/25 bg-emerald-50 text-emerald-900",
     warning: "border-amber-500/25 bg-amber-50 text-amber-950",
     info: "border-[#0e3b61]/15 bg-[#0e3b61]/5 text-[#0e3b61]",
+    error: "border-red-500/25 bg-red-50 text-red-700",
   }[result?.tone ?? "info"];
 
   return (

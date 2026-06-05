@@ -35,9 +35,6 @@ export default function CandidatureResultatsPage() {
           </p>
         )}
 
-        <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-[#0e3b61]/55">
-          Cette session s'est terminée le {CAMPAIGN_CLOSE_AT_LABEL}.
-        </p>
       </div>
     </main>
   );

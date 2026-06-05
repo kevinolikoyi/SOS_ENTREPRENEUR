@@ -1,0 +1,13 @@
+
+> sos-entrepreneur@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.15
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.246.198:3001
+
+ ✓ Starting...
+ ✓ Ready in 2.9s
+ ○ Compiling / ...
+ ✓ Compiled / in 1424ms (659 modules)
+ GET / 200 in 2138ms
